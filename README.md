@@ -11,14 +11,21 @@ https://www.kaggle.com/learn/advanced-sql
 4.Hafta : 
 Alternatif Kaynaklar ve ileri düzey problemler.
 
-Alternatif Kaynak-1: https://www.oracletutorial.com/
-Alternatif Kaynak-2: https://livesql.oracle.com/next/
-Alternatif Kaynak-3: https://www.w3schools.com/sql/default.asp
+Alternatif Kaynak-1: 
+https://www.oracletutorial.com/
+
+Alternatif Kaynak-2: 
+https://livesql.oracle.com/next/
+
+Alternatif Kaynak-3: 
+https://www.w3schools.com/sql/default.asp
 
 SQL Ödev: 
 https://www.hackerrank.com/domains/sql 
+
 Python Ödev: 
 https://www.hackerrank.com/domains/python
+
 
 Python bilmeyenler bu kursu tamamlarsa iyi olur. 
 https://www.kaggle.com/learn/python
