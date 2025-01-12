@@ -1,7 +1,7 @@
 # DataBootcamp2025
 
 1.Hafta Pandas : 
-https://www.kaggle.com/learn/pandas
+https://www.kaggle.com/learn/pandas kursunu Tutorial ve Exercise ları birlikte tamamlayıp Kaggle Pandas sertifikası alabilirsiniz.
 - Alex Freberg ın hazırladığı Learn Pandas in Under 3 Hours | Filtering, Joins, Indexing, Data Cleaning, Visualizations kursunu izleyebilirsiniz.
   https://www.youtube.com/watch?v=Mdq1WWSdUtw&t=2758s
   
