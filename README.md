@@ -31,6 +31,6 @@ Python bilmeyenler bu kursu tamamlarsa iyi olur.
 https://www.kaggle.com/learn/python
 
 ilişkisel veri tabanları ile ilgili bilgi edinmek için
-Cele Çeken hocanın hazırladığı dokümanları okuyabilirsiniz.
+Celal Çeken hocanın hazırladığı dokümanları okuyabilirsiniz.
 
 https://github.com/celalceken/DatabaseManagementSystems/blob/master/VYS01.md
