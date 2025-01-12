@@ -1,5 +1,6 @@
 # DataBootcamp2025
-Bootcamp ile ilgili Videoları  https://www.youtube.com/@DataBootcamp2025 kanalında bulabilirsiniz. 
+Bootcamp ile ilgili Videolar:  https://www.youtube.com/@DataBootcamp2025 
+Kursun birinci bölümü ile ilgili kitaplar : https://github.com/msaltan/DataBootcamp2025/tree/main/Part-1-Books
 
 1.Hafta Pandas : 
 https://www.kaggle.com/learn/pandas kursunu Tutorial ve Exercise ları birlikte tamamlayıp Kaggle Pandas sertifikası alabilirsiniz.
