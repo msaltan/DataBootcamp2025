@@ -94,6 +94,8 @@ services:
       POSTGRES_DB: airflow
     volumes:
       - postgres-db-volume:/var/lib/postgresql/data
+    networks:
+      - hmwrk2_network      
     healthcheck:
       test: ["CMD", "pg_isready", "-U", "airflow"]
       interval: 10s
@@ -107,6 +109,8 @@ services:
     image: redis:7.2-bookworm
     expose:
       - 6379
+    networks:
+      - hmwrk2_network      
     healthcheck:
       test: ["CMD", "redis-cli", "ping"]
       interval: 10s
@@ -127,6 +131,8 @@ services:
       retries: 5
       start_period: 30s
     restart: always
+    networks:
+      - hmwrk2_network    
     depends_on:
       <<: *airflow-common-depends-on
       airflow-init:
@@ -142,6 +148,8 @@ services:
       retries: 5
       start_period: 30s
     restart: always
+    networks:
+      - hmwrk2_network    
     depends_on:
       <<: *airflow-common-depends-on
       airflow-init:
@@ -165,6 +173,8 @@ services:
       # See https://airflow.apache.org/docs/docker-stack/entrypoint.html#signal-propagation
       DUMB_INIT_SETSID: "0"
     restart: always
+    networks:
+      - hmwrk2_network    
     depends_on:
       <<: *airflow-common-depends-on
       airflow-init:
@@ -180,6 +190,8 @@ services:
       retries: 5
       start_period: 30s
     restart: always
+    networks:
+      - hmwrk2_network    
     depends_on:
       <<: *airflow-common-depends-on
       airflow-init:
@@ -238,6 +250,8 @@ services:
         chown -R "${AIRFLOW_UID}:0" /sources/{logs,dags,plugins}
         exec /entrypoint airflow version
     # yamllint enable rule:line-length
+    networks:
+      - hmwrk2_network    
     environment:
       <<: *airflow-common-env
       _AIRFLOW_DB_MIGRATE: 'true'
@@ -253,6 +267,8 @@ services:
     <<: *airflow-common
     profiles:
       - debug
+    networks:
+      - hmwrk2_network      
     environment:
       <<: *airflow-common-env
       CONNECTION_CHECK_MAX_COUNT: "0"
@@ -279,6 +295,8 @@ services:
       retries: 5
       start_period: 30s
     restart: always
+    networks:
+      - hmwrk2_network    
     depends_on:
       <<: *airflow-common-depends-on
       airflow-init:
@@ -286,3 +304,7 @@ services:
 
 volumes:
   postgres-db-volume:
+  
+networks:
+  hmwrk2_network:
+    driver: bridge
