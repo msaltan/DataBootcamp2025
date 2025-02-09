@@ -23,7 +23,7 @@ def wait_for_postgres(host, max_retries=5, delay_seconds=5):
 
 
 # Use the function before running the ELT process
-if not wait_for_postgres(host="source_postgres"):
+if not wait_for_postgres(host="movies_source"):
     exit(1)
 
 print("Starting ELT script...")
