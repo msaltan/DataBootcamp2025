@@ -1,0 +1,41 @@
+version: '3'
+
+services:
+  movies_source:
+    image: postgres:15
+    ports:
+      - '5433:5432'
+    networks:
+      - hmwrk2_network
+    environment:
+      POSTGRES_DB: movies_source_db
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: secret
+    volumes:
+      - ./sample_movies_db.sql:/docker-entrypoint-initdb.d/init.sql
+
+  movies_destination:
+    image: postgres:15
+    ports:
+      - '5434:5432'
+    networks:
+      - hmwrk2_network
+    environment:
+      POSTGRES_DB: movies_destination_db
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: secret
+
+  etl_script:
+    build:
+      context: ./etl_script # Directory containing the Dockerfile and etl_script.py
+      dockerfile: Dockerfile # Name of the Dockerfile, if it's something other than "Dockerfile", specify here
+    command: ['python', 'sample_movies_db_etl.py']
+    networks:
+      - hmwrk2_network
+    depends_on:
+      - movies_source
+      - movies_destination
+
+networks:
+  hmwrk2_network:
+    driver: bridge

@@ -1,0 +1,10 @@
+FROM python:3.8-slim
+
+# Install PostgreSQL command-line tools
+RUN apt-get update && apt-get install -y postgresql-client-15
+
+# Copy the ELT script 
+COPY sample_movies_db_etl.py .
+
+# Set the default command to run the ELT script
+CMD ["python", "sample_movies_db_etl.py"]
